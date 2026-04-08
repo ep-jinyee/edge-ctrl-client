@@ -537,7 +537,7 @@ namespace EdgeCtrlClient
                 string url = BuildUrl(host, EdgeFirmware.CardCount);
 
                 response = await _httpClientFactoryService.SendRequestAsync<CardCountInfoDTO>(HttpMethod.Get, url);
-               
+
             }
             catch (Exception ex)
             {
@@ -771,6 +771,42 @@ namespace EdgeCtrlClient
             response = await _httpClientFactoryService.SendRequestAsync<List<SingleFirmwareReaderDTO>>(HttpMethod.Get, url);
 
             return response;
+        }
+
+        public async Task<EdgePlusApiResponse<string>> EdgeSetDoorPulseOpen(string host, EdgeDoorPulseOpenPayload data)
+        {
+            string url = BuildUrl(host, EdgeFirmware.SetDoorPulseOpenEndPoint);
+
+            var payload = new
+            {
+                payload = data
+            };
+
+            return await _httpClientFactoryService.SendRequestAsync<string>(HttpMethod.Post, url, payload);
+        }
+
+        public async Task<EdgePlusApiResponse<string>> EdgeSetDoorSecurityLevel(string host, EdgeDoorSecurityLevelPayload data)
+        {
+            string url = BuildUrl(host, EdgeFirmware.SetDoorSecurityEndPoint);
+
+            var payload = new
+            {
+                payload = data
+            };
+
+            return await _httpClientFactoryService.SendRequestAsync<string>(HttpMethod.Post, url, payload);
+        }
+
+        public async Task<EdgePlusApiResponse<string>> EdgeSetDoorInhibit(string host, EdgeDoorInhibitPayload data)
+        {
+            string url = BuildUrl(host, EdgeFirmware.SetDoorInhibitEndPoint);
+
+            var payload = new
+            {
+                payload = data
+            };
+            
+            return await _httpClientFactoryService.SendRequestAsync<string>(HttpMethod.Post, url, payload);
         }
 
         private static string BuildBaseUrl(string host)

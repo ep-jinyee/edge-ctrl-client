@@ -68,5 +68,11 @@ namespace EdgeCtrlClient
         Task<EdgePlusApiResponse<string>> EdgeSetReaderAsync(string host, List<EdgeSetReaderPayload> setReaderPayload);
 
         Task<EdgePlusApiResponse<List<SingleFirmwareReaderDTO>>?> EdgeGetReaderAsync(string host, int pdid);
+
+        Task<EdgePlusApiResponse<string>> EdgeSetDoorPulseOpen(string host, EdgeDoorPulseOpenPayload data);
+
+        Task<EdgePlusApiResponse<string>> EdgeSetDoorSecurityLevel(string host, EdgeDoorSecurityLevelPayload data);
+
+        Task<EdgePlusApiResponse<string>> EdgeSetDoorInhibit(string host, EdgeDoorInhibitPayload data);
     }
 }

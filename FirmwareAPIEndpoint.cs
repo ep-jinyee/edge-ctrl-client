@@ -15,7 +15,7 @@ namespace EdgeCtrlClient
         internal static readonly string HardwareInfoEndpoint = "hardware";
         internal static readonly string UploadEndpoint = "ota-update";
         internal static readonly string ResetEndpoint = "sys/reset";
-        internal static readonly string ColdResetEndpoint = "sys/coldstart";
+        internal static readonly string ColdResetEndpoint= "sys/coldstart";
         internal static readonly string FacDefEndpoint = "sys/setdef";
         internal static readonly string NetworkEndpoint = "network";
         internal static readonly string SetScheduleEndpoint = "timezone/{0}";
@@ -35,5 +35,8 @@ namespace EdgeCtrlClient
         internal static readonly string GetReaderEndpoint = "reader?pd_id={0}";
         internal static readonly string SerialEndpoint = "sys/serial";
         internal static readonly string SetRTCEndpoint = "rtc";
+        internal static readonly string SetDoorPulseOpenEndPoint = "door/pulse-open";
+        internal static readonly string SetDoorSecurityEndPoint = "door/security-lvl";
+        internal static readonly string SetDoorInhibitEndPoint = "door/inhibit";
     }
 }
