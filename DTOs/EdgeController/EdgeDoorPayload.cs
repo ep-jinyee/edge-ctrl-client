@@ -97,7 +97,7 @@ namespace EdgeCtrlClient.DTOs.EdgeController
         public AlarmGroup? Alarm { get; set; }
 
         [JsonProperty("loop_detector")]
-        public
+        public LoopDetector? LoopDetector { get; set; }
     }
 
     public class DoorPinStruct
