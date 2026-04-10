@@ -18,7 +18,7 @@ namespace EdgeCtrlClient.DTOs.EdgeController
         [JsonProperty("info")]
         public List<SingleFirmwareDoorDTO>? Info { get; set; }
     }
-    
+
     public class SingleFirmwareDoorDTO
     {
         [JsonProperty("drid")]
@@ -40,7 +40,7 @@ namespace EdgeCtrlClient.DTOs.EdgeController
         public int ZoneOutId { get; set; }
 
         [JsonProperty("en_tz")]
-        public int DoorActiveSchedule {  get; set; }
+        public int DoorActiveSchedule { get; set; }
 
         [JsonProperty("inhibit_tz")]
         public int InhibitSchedule { get; set; }
@@ -60,7 +60,7 @@ namespace EdgeCtrlClient.DTOs.EdgeController
         [JsonProperty("card_pin_err_limit")]
         public int CardPinErrorLimit { get; set; }
 
-        [JsonProperty("pin")]
+        [JsonProperty("door_pin")]
         public List<DoorPinStruct>? DoorPins { get; set; }
 
         [JsonProperty("pin_lockout_en_tz")]
@@ -95,6 +95,9 @@ namespace EdgeCtrlClient.DTOs.EdgeController
 
         [JsonProperty("alarm")]
         public AlarmGroup? Alarm { get; set; }
+
+        [JsonProperty("loop_detector")]
+        public
     }
 
     public class DoorPinStruct
@@ -104,7 +107,7 @@ namespace EdgeCtrlClient.DTOs.EdgeController
 
         [JsonProperty("pin")]
         public string? Doorpin { get; set; }
-    } 
+    }
 
     public class DoorInterLockGroup
     {
@@ -125,5 +128,13 @@ namespace EdgeCtrlClient.DTOs.EdgeController
 
         [JsonProperty("bind_to_zone")]
         public int? AlarmZoneId { get; set; }
+    }
+
+    public class LoopDetector
+    {
+        [JsonProperty("pdid")]
+        public int PD_Id;
+        [JsonProperty("id")]
+        public int Number;
     }
 }
