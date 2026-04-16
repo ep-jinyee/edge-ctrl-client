@@ -21,7 +21,7 @@ namespace EdgeCtrlClient.DTOs.EdgeController
         [JsonProperty("info")]
         public List<SingleFirmwareIO_DTO>? Info { get; set; }
     }
-    
+
     public class SingleFirmwareIO_DTO
     {
         [JsonProperty("id")]
@@ -39,8 +39,26 @@ namespace EdgeCtrlClient.DTOs.EdgeController
         [JsonProperty("input_trig_mode")]
         public int TriggeredMode { get; set; }
 
+        [JsonProperty("trigger_delay")]
+        public int TriggerDelaySecond { get; set; }
+
+        [JsonProperty("normal_delay")]
+        public int NormalDelaySecond { get; set; }
+
         [JsonProperty("property")]
         public Tied_Props? Tied_Props { get; set; }
+
+        [JsonProperty("raw-threshold")]
+        public List<TriggerRange> OnOffOpenShortThreshold { get; set; }
+    }
+
+    public class TriggerRange
+    {
+        [JsonProperty("min")]
+        public int MinRange { get; set; }
+
+        [JsonProperty("max")]
+        public int MaxRange { get; set; }
     }
 
     public class Tied_Props
@@ -56,5 +74,5 @@ namespace EdgeCtrlClient.DTOs.EdgeController
 
         [JsonProperty("bind_to_zone", NullValueHandling = NullValueHandling.Ignore)]
         public int? BindToZone { get; set; }
-    } 
+    }
 }
